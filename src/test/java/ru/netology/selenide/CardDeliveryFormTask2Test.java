@@ -23,11 +23,11 @@ public class CardDeliveryFormTask2Test {
         $("[data-test-id='city'] input").setValue("Мо");
         $$(".menu-item__control").findBy(text("Москва")).click();
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
-        String planningDate = generateDate(5, "dd.MM.yyyy");
-        if (!generateDate(5, "MM").equals(generateDate(7, "MM"))) {
+        String planningDate = generateDate(7, "dd.MM.yyyy");
+        if (!generateDate(3, "MM").equals(generateDate(7, "MM"))) {
             $("[data-step='1']").click();
         };
-        $("[data-test-id='date'] input").setValue(planningDate);
+        $$("[data-day]").findBy(text(generateDate(7, "dd"))).click();
         $("[data-test-id='name'] input").setValue("Иван Петров");
         $("[data-test-id='phone'] input").setValue("+79010010101");
         $("[data-test-id='agreement']").click();
